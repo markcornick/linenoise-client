@@ -9,7 +9,7 @@ which is what you really want to use.
 ## Usage
 
 See the documentation for linenoise-classic at
-https://markcornick.com/linenoise-classic/.
+https://linenoise.mcornick.com/.
 
 ## Contributing
 
