@@ -55,18 +55,24 @@ func check(e error) {
 
 func main() {
 	var (
+		host   = "127.0.0.1"
+		port   = 8080
 		length = 16
 		upper  = true
 		lower  = true
 		digit  = true
 	)
+	flag.StringVar(&host, "host", "127.0.0.1", "Host to connect to")
+	flag.IntVar(&port, "port", 8080, "Port to connect to")
 	flag.IntVar(&length, "length", 16, "Length to generate")
 	flag.BoolVar(&upper, "upper", true, "Include uppercase letters")
 	flag.BoolVar(&lower, "lower", true, "Include lowercase letters")
 	flag.BoolVar(&digit, "digit", true, "Include digits")
 	flag.Parse()
 
-	endpoint := fmt.Sprintf("http://127.0.0.1:8080/v1/noise?length=%d&upper=%s&lower=%s&digit=%s",
+	endpoint := fmt.Sprintf("http://%s:%d/v1/noise?length=%d&upper=%s&lower=%s&digit=%s",
+		host,
+		port,
 		length,
 		btos(upper),
 		btos(lower),
