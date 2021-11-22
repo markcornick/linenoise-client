@@ -55,12 +55,12 @@ func check(e error) {
 
 func main() {
 	var (
-		host   = "127.0.0.1"
-		port   = 8080
-		length = 16
-		upper  = true
-		lower  = true
-		digit  = true
+		host   string
+		port   int
+		length int
+		upper  bool
+		lower  bool
+		digit  bool
 	)
 	flag.StringVar(&host, "host", "127.0.0.1", "Host to connect to")
 	flag.IntVar(&port, "port", 8080, "Port to connect to")
